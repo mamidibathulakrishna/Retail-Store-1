@@ -28,3 +28,24 @@ The application will start, and you can access the endpoints at http://localhost
 API Documentation (Swagger)
 The API documentation is generated using Swagger. Once the application is running, you can access the Swagger UI at:
 http://localhost:8080/swagger-ui.html
+
+Sample Test
+POST http://localhost:8080/api/billing/calculateNetPayableAmount
+{
+    "user": {
+        "userType": "CUSTOMER",
+        "memberSince": "2024-01-01"  // Date should match your user's memberSince date
+    },
+    "items": [
+        {
+            "name": "Laptop",
+            "price": 1200.0,
+            "grocery": false
+        },
+        {
+            "name": "Milk",
+            "price": 5.0,
+            "grocery": true
+        }
+    ]
+}
